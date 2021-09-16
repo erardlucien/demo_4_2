@@ -1,0 +1,172 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* for small screen */
+
+/* breadcrumb */
+
+.breadcrumb {
+    display: flex;
+    flex-direction: column;
+    background: rebeccapurple;
+    padding: 25px 0;
+}
+
+/* breadcrumb-btn */
+
+.breadcrumb-btn {
+    display: none;
+}
+
+.breadcrumb-btn:checked ~ .logo-and-label > .label-breadcrumb-btn > .breadcrumb-icon {
+    background-color: transparent;
+    transition: 0.9s;
+}
+
+.breadcrumb-btn:checked ~ .logo-and-label > .label-breadcrumb-btn > .breadcrumb-icon::before {
+    background-color: red;
+    transform: rotate(405deg) translate(2px, 5px);
+    transition: 0.9s;
+}
+
+.breadcrumb-btn:checked ~ .logo-and-label > .label-breadcrumb-btn > .breadcrumb-icon::after {
+    background-color: red;
+    transform: rotate(-405deg) translate(2px, -5px);
+    transition: 0.9s;
+}
+
+.breadcrumb-btn:checked ~ .logo-and-label ~ .breadcrumb-menu {
+    display: flex;
+    transition: 0.9s;
+}
+
+/* logo-and-label */
+
+.logo-and-label {
+    display: flex;
+    padding: 0 16px;
+    justify-content: space-between;
+}
+
+/* breadcrumb-icon */
+
+.breadcrumb-icon {
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+    margin: 10px 0 0 0;
+    transition: 0.9s;
+}
+
+.breadcrumb-icon::before {
+    content: " ";
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: -5px;
+    transition: 0.9s;
+}
+
+.breadcrumb-icon::after {
+    content: " ";
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: 5px;
+    transition: 0.9s;
+}
+
+/* breadcrumb-menu */
+
+.breadcrumb-menu {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    padding: 0 16px;
+}
+
+/* link */
+
+.link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding: 16px 0;
+    color: white;
+}
+
+.link:hover {
+    color: red;
+    transition: 0.9s;
+}
+
+/* service-menu */
+
+.service-menu {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+}
+
+.service-menu:target {
+    display: flex;
+}
+
+/* for big screen */
+
+@media screen and (min-width: 768px) {
+
+    /* breadcrumb */
+
+    .breadcrumb {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* label-breadcrumb-btn */
+
+    .label-breadcrumb-btn {
+        display: none;
+    }
+
+    /* breadcrumb-menu */
+
+    .breadcrumb-menu {
+        display: flex;
+        flex-direction: row;
+        margin: 1px 0;
+    }
+
+    /* link */
+
+    .link {
+        padding: 0 16px;
+    }
+
+    /* service-menu */
+
+    .service-menu {
+        position: absolute;
+        background-color: rebeccapurple;
+    }
+
+    /* service-menu link */
+
+    .service-menu .link {
+        padding: 16px;
+    }
+
+}
